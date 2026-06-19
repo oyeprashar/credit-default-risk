@@ -5,7 +5,8 @@ import numpy as np
 from sklearn.metrics import (
     precision_score,
     recall_score,
-    f1_score
+    f1_score,
+    roc_auc_score
 )
 
 from src.data.preprocessing import preprocessor, X_train, y_train, X_test, y_test
@@ -64,3 +65,7 @@ print("Precision:", precision_score(y_test, y_predict))
 print("Recall:", recall_score(y_test, y_predict))
 print("F1:", f1_score(y_test, y_predict))
 
+
+y_predict_prob =  model.predict_proba(X_test)
+y_predit_prob_class_1 = y_predict_prob[::,1]
+print("ROC-AUC:", roc_auc_score(y_test, y_predit_prob_class_1))

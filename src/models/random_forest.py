@@ -25,14 +25,15 @@ y_predict = model.predict(X_test)
 
 # this will give us the probability of an example
 # belonging to class 0 and class 1
-y_predict_prob =  model.predict_proba(X_test)
-y_predit_prob_class_1 = y_predict_prob[::,1]
+
+
 acc = (np.sum(y_predict == y_test))/len(y_test)
 print("Accuracy:", accuracy_score(y_test, y_predict))
 print("Precision:", precision_score(y_test, y_predict))
 print("Recall:", recall_score(y_test, y_predict))
 print("F1:", f1_score(y_test, y_predict))
 
-# We need to analyze the score
 
+y_predict_prob =  model.predict_proba(X_test)
+y_predit_prob_class_1 = y_predict_prob[::,1]
 print("ROC-AUC:", roc_auc_score(y_test, y_predit_prob_class_1))
