@@ -23,3 +23,15 @@ Using scale_pos_weight (neg_example / pos_examples) dramatically increased recal
 This came at the cost of lower precision and accuracy because the model produced more false positives.
 
 ROC-AUC remained roughly unchanged, indicating the ranking quality of the model was similar.
+
+# Balanced XGBoost Threshold Experiment
+
+| Threshold | Precision | Recall | F1    |
+|-----------|-----------|--------|-------|
+| 0.1       | 0.083     | 0.996  | 0.154 |
+| 0.2       | 0.095     | 0.962  | 0.173 |
+| 0.3       | 0.114     | 0.891  | 0.203 |
+| 0.4       | 0.140     | 0.793  | 0.238 |
+| 0.5       | 0.170     | 0.658  | 0.270 |
+| 0.6       | 0.209     | 0.492  | 0.293 |
+| **0.7**   | **0.272** | **0.326** | **0.297** |
