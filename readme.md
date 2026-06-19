@@ -1,4 +1,5 @@
 # Results
+### XGBoost wins!
 
 | Model               | Accuracy | Precision | Recall | F1     | ROC-AUC |
 |---------------------|----------|-----------|--------|--------|---------|
@@ -7,7 +8,7 @@
 | <span style="color:#e05c5c">**XGBoost**</span> | <span style="color:#e05c5c">**0.9197**</span> | <span style="color:#e05c5c">**0.5813**</span> | <span style="color:#e05c5c">**0.0187**</span> | <span style="color:#e05c5c">**0.0363**</span> | <span style="color:#e05c5c">**0.7564**</span> |
 | Neural Network      | 0.8853   | 0.1815    | 0.1200 | 0.1445 | 0.6100  |
 
-### XGBoost wins!
+
 
 # Balanced XGBoost
 | Metric    | Original XGBoost | Balanced XGBoost |
@@ -19,9 +20,7 @@
 | ROC-AUC   | 0.7564           | 0.7533           |
 
 Using scale_pos_weight (neg_example / pos_examples) dramatically increased recall from 1.9% to 65.8%, meaning the model found many more risky customers.
-
 This came at the cost of lower precision and accuracy because the model produced more false positives.
-
 ROC-AUC remained roughly unchanged, indicating the ranking quality of the model was similar.
 
 # Balanced XGBoost Threshold Experiment
