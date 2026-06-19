@@ -54,3 +54,36 @@ Harmonic mean of Precision and Recall. Near zero because Recall is near zero. Co
 The model has moderate ranking ability — 71.2% of the time it scores a true positive higher than a true negative. Decent, but not reflected in Recall because the classification threshold (0.5) is too high for this imbalanced dataset.
  
 ---
+
+# XGBoost — Model Evaluation
+ 
+## Metrics Summary
+ 
+| Metric    | Score  |
+|-----------|--------|
+| Accuracy  | 0.9197 |
+| Precision | 0.5813 |
+| Recall    | 0.0187 |
+| F1 Score  | 0.0363 |
+| ROC-AUC   | 0.7564 |
+ 
+---
+ 
+## Analysis
+ 
+### Accuracy — 91.97%
+Nearly identical to Random Forest. Again, misleading due to class imbalance — majority class dominance is masking poor minority class detection.
+ 
+### Precision — 58.1%
+Noticeably lower than Random Forest (87.5%). When XGBoost predicts a default, it's right only 58% of the time — more false alarms.
+ 
+### Recall — 1.87%
+Still critically low, but ~13x better than Random Forest (0.14%). The model is catching slightly more actual defaulters, at the cost of Precision.
+ 
+### F1 Score — 0.0363
+Still near zero, but ~13x better than Random Forest (0.0028). Reflects the Recall improvement.
+ 
+### ROC-AUC — 0.7564
+Better than Random Forest (0.7118). XGBoost has stronger overall ranking ability — 75.6% of the time it scores a true positive higher than a true negative.
+ 
+---
