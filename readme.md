@@ -87,3 +87,36 @@ Still near zero, but ~13x better than Random Forest (0.0028). Reflects the Recal
 Better than Random Forest (0.7118). XGBoost has stronger overall ranking ability — 75.6% of the time it scores a true positive higher than a true negative.
  
 ---
+
+# Neural Network — Model Evaluation
+ 
+## Metrics Summary
+ 
+| Metric    | Score  |
+|-----------|--------|
+| Accuracy  | 0.8853 |
+| Precision | 0.1815 |
+| Recall    | 0.1200 |
+| F1 Score  | 0.1445 |
+| ROC-AUC   | 0.6100 |
+ 
+---
+ 
+## Analysis
+ 
+### Accuracy — 88.5%
+Lower than both Random Forest and XGBoost (~91.9%). The model is making more overall errors, but this could mean it's actually trying to predict more positives.
+ 
+### Precision — 18.1%
+Lowest across all three models. When it predicts a default, it's wrong 82% of the time — very noisy positive predictions.
+ 
+### Recall — 12.0%
+Highest across all three models by a large margin (vs 1.87% XGBoost, 0.14% RF). The network is catching far more actual defaulters, at the cost of precision.
+ 
+### F1 Score — 0.1445
+Best F1 across all three models (~4x better than XGBoost). The Precision-Recall tradeoff here is the most balanced so far.
+ 
+### ROC-AUC — 0.6100
+Worst across all three models. Despite better Recall, the model's overall ranking ability is weaker — it's catching more positives by predicting positive more aggressively, not by ranking better.
+ 
+---
