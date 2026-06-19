@@ -1,3 +1,11 @@
+# Tasks completed in this project
+- [x] Built an end-to-end credit risk prediction pipeline on the Home Credit Default Risk dataset.
+- [x] Performed EDA, missing-value handling, categorical encoding, feature scaling, and model training.
+- [x] Implemented and compared Logistic Regression, Random Forest, XGBoost, and Neural Networks.
+- [x] Evaluated models using Precision, Recall, F1, and ROC-AUC on an imbalanced dataset.
+- [x] Improved minority-class detection using XGBoost class weighting and threshold tuning.
+- [x] Achieved ROC-AUC of 0.756 using XGBoost and analyzed precision-recall tradeoffs.
+
 # Results
 ### XGBoost wins!
 
