@@ -8,3 +8,18 @@
 | Neural Network      | 0.8853   | 0.1815    | 0.1200 | 0.1445 | 0.6100  |
 
 ### XGBoost wins!
+
+# Balanced XGBoost
+| Metric    | Original XGBoost | Balanced XGBoost |
+|-----------|------------------|------------------|
+| Accuracy  | 0.9197           | 0.7135           |
+| Precision | 0.5810           | 0.1700           |
+| Recall    | 0.0187           | 0.6580           |
+| F1        | 0.0360           | 0.2700           |
+| ROC-AUC   | 0.7564           | 0.7533           |
+
+Using scale_pos_weight (neg_example / pos_examples) dramatically increased recall from 1.9% to 65.8%, meaning the model found many more risky customers.
+
+This came at the cost of lower precision and accuracy because the model produced more false positives.
+
+ROC-AUC remained roughly unchanged, indicating the ranking quality of the model was similar.
